@@ -1,0 +1,433 @@
+month,program,city,beneficiaries,funds_spent,volunteers,sessions_conducted,dropouts
+2023-01,literacy,Delhi,243,44592,5,16,9
+2023-01,literacy,Lucknow,137,48289,8,29,19
+2023-01,literacy,Jaipur,102,107397,18,9,2
+2023-01,literacy,Patna,103,58657,12,24,2
+2023-01,vocational,Delhi,223,56062,25,30,19
+2023-01,vocational,Lucknow,187,58893,19,26,10
+2023-01,vocational,Jaipur,287,30851,10,30,15
+2023-01,vocational,Patna,167,66421,9,14,12
+2023-01,digital skills,Delhi,106,42156,17,11,13
+2023-01,digital skills,Lucknow,296,75082,24,16,3
+2023-01,digital skills,Jaipur,266,90217,22,11,14
+2023-01,digital skills,Patna,100,102357,14,28,13
+2023-02,literacy,Delhi,227,55203,7,9,9
+2023-02,literacy,Lucknow,277,67930,7,15,5
+2023-02,literacy,Jaipur,177,66434,19,28,13
+2023-02,literacy,Patna,121,78520,16,14,10
+2023-02,vocational,Delhi,259,119593,25,10,7
+2023-02,vocational,Lucknow,216,62087,10,22,14
+2023-02,vocational,Jaipur,149,113886,22,15,12
+2023-02,vocational,Patna,295,37331,12,9,12
+2023-02,digital skills,Delhi,182,65093,7,14,20
+2023-02,digital skills,Lucknow,263,71245,11,28,17
+2023-02,digital skills,Jaipur,181,114259,19,12,10
+2023-02,digital skills,Patna,115,62325,22,25,10
+2023-03,literacy,Delhi,271,106622,18,26,14
+2023-03,literacy,Lucknow,172,58746,9,24,17
+2023-03,literacy,Jaipur,103,36175,8,12,7
+2023-03,literacy,Patna,282,119192,18,27,4
+2023-03,vocational,Delhi,178,80019,24,22,18
+2023-03,vocational,Lucknow,144,102512,5,29,5
+2023-03,vocational,Jaipur,254,100381,13,28,12
+2023-03,vocational,Patna,108,68469,18,13,16
+2023-03,digital skills,Delhi,80,64522,21,13,18
+2023-03,digital skills,Lucknow,107,111959,14,28,18
+2023-03,digital skills,Jaipur,235,56071,9,19,7
+2023-03,digital skills,Patna,218,99514,5,27,12
+2023-04,literacy,Delhi,205,32552,8,19,11
+2023-04,literacy,Lucknow,141,37592,12,26,4
+2023-04,literacy,Jaipur,101,93699,7,25,6
+2023-04,literacy,Patna,112,116474,20,25,7
+2023-04,vocational,Delhi,147,99163,24,21,8
+2023-04,vocational,Lucknow,218,56365,14,20,13
+2023-04,vocational,Jaipur,192,97839,19,11,9
+2023-04,vocational,Patna,137,38392,15,8,20
+2023-04,digital skills,Delhi,221,60161,23,15,2
+2023-04,digital skills,Lucknow,98,112719,6,15,4
+2023-04,digital skills,Jaipur,88,73309,7,24,9
+2023-04,digital skills,Patna,151,117684,20,14,19
+2023-05,literacy,Delhi,113,104847,23,23,9
+2023-05,literacy,Lucknow,280,91993,18,14,5
+2023-05,literacy,Jaipur,104,116374,18,19,15
+2023-05,literacy,Patna,185,91213,6,29,5
+2023-05,vocational,Delhi,95,82772,15,11,9
+2023-05,vocational,Lucknow,129,54931,22,22,6
+2023-05,vocational,Jaipur,188,54050,13,22,9
+2023-05,vocational,Patna,99,88082,22,11,3
+2023-05,digital skills,Delhi,246,100855,5,10,9
+2023-05,digital skills,Lucknow,122,83269,20,23,8
+2023-05,digital skills,Jaipur,182,37685,10,20,2
+2023-05,digital skills,Patna,179,64760,19,17,15
+2023-06,literacy,Delhi,258,102845,20,12,8
+2023-06,literacy,Lucknow,155,58534,6,26,19
+2023-06,literacy,Jaipur,95,71104,6,9,20
+2023-06,literacy,Patna,202,95909,21,13,3
+2023-06,vocational,Delhi,210,40500,10,10,4
+2023-06,vocational,Lucknow,252,60828,17,11,20
+2023-06,vocational,Jaipur,143,105880,24,9,4
+2023-06,vocational,Patna,187,116163,23,26,18
+2023-06,digital skills,Delhi,160,64179,11,29,12
+2023-06,digital skills,Lucknow,141,64814,17,12,11
+2023-06,digital skills,Jaipur,197,71441,7,8,16
+2023-06,digital skills,Patna,239,103792,8,10,19
+2023-07,literacy,Delhi,134,96307,13,12,13
+2023-07,literacy,Lucknow,97,62018,16,17,7
+2023-07,literacy,Jaipur,192,101200,14,27,18
+2023-07,literacy,Patna,82,117538,22,17,5
+2023-07,vocational,Delhi,114,64664,8,11,19
+2023-07,vocational,Lucknow,119,65697,14,27,8
+2023-07,vocational,Jaipur,263,74942,11,29,10
+2023-07,vocational,Patna,209,94032,13,9,4
+2023-07,digital skills,Delhi,242,85518,13,9,2
+2023-07,digital skills,Lucknow,165,47146,25,16,7
+2023-07,digital skills,Jaipur,269,87912,22,30,15
+2023-07,digital skills,Patna,223,31267,8,10,6
+2023-08,literacy,Delhi,219,34722,16,26,19
+2023-08,literacy,Lucknow,117,86333,9,9,11
+2023-08,literacy,Jaipur,173,35229,16,14,9
+2023-08,literacy,Patna,250,43473,16,25,15
+2023-08,vocational,Delhi,238,50257,12,13,7
+2023-08,vocational,Lucknow,185,33248,10,18,15
+2023-08,vocational,Jaipur,285,117806,12,16,7
+2023-08,vocational,Patna,281,44168,17,9,17
+2023-08,digital skills,Delhi,136,56158,19,19,11
+2023-08,digital skills,Lucknow,290,59831,12,8,8
+2023-08,digital skills,Jaipur,182,73025,13,10,10
+2023-08,digital skills,Patna,169,114080,21,20,19
+2023-09,literacy,Delhi,164,33617,8,16,7
+2023-09,literacy,Lucknow,228,64795,6,11,15
+2023-09,literacy,Jaipur,168,71114,18,27,18
+2023-09,literacy,Patna,109,80488,23,14,10
+2023-09,vocational,Delhi,91,87154,5,24,19
+2023-09,vocational,Lucknow,255,117900,11,19,15
+2023-09,vocational,Jaipur,97,117062,15,27,12
+2023-09,vocational,Patna,249,46334,14,24,11
+2023-09,digital skills,Delhi,250,83528,15,20,11
+2023-09,digital skills,Lucknow,221,46683,11,21,14
+2023-09,digital skills,Jaipur,253,52810,24,26,11
+2023-09,digital skills,Patna,183,101819,5,17,11
+2023-10,literacy,Delhi,133,86346,23,27,12
+2023-10,literacy,Lucknow,199,87905,19,29,8
+2023-10,literacy,Jaipur,210,92021,10,29,4
+2023-10,literacy,Patna,152,97561,25,27,12
+2023-10,vocational,Delhi,103,60784,14,15,8
+2023-10,vocational,Lucknow,117,33201,6,15,17
+2023-10,vocational,Jaipur,236,39545,19,21,20
+2023-10,vocational,Patna,129,80328,20,20,9
+2023-10,digital skills,Delhi,117,115990,5,11,15
+2023-10,digital skills,Lucknow,136,53053,21,22,3
+2023-10,digital skills,Jaipur,222,62662,8,22,6
+2023-10,digital skills,Patna,285,90901,21,25,12
+2023-11,literacy,Delhi,273,88008,24,24,15
+2023-11,literacy,Lucknow,292,101810,19,13,17
+2023-11,literacy,Jaipur,195,63972,12,28,10
+2023-11,literacy,Patna,276,98327,20,28,9
+2023-11,vocational,Delhi,150,87654,7,30,11
+2023-11,vocational,Lucknow,140,65614,15,18,19
+2023-11,vocational,Jaipur,100,48136,9,15,14
+2023-11,vocational,Patna,257,50028,11,10,15
+2023-11,digital skills,Delhi,184,73369,22,22,15
+2023-11,digital skills,Lucknow,95,57110,18,20,20
+2023-11,digital skills,Jaipur,258,32560,23,20,17
+2023-11,digital skills,Patna,81,76105,14,20,15
+2023-12,literacy,Delhi,217,101582,24,15,17
+2023-12,literacy,Lucknow,136,65774,18,23,2
+2023-12,literacy,Jaipur,179,74057,17,13,16
+2023-12,literacy,Patna,112,111560,22,8,14
+2023-12,vocational,Delhi,231,103975,5,10,15
+2023-12,vocational,Lucknow,114,90515,10,9,10
+2023-12,vocational,Jaipur,177,72906,11,22,12
+2023-12,vocational,Patna,166,79692,13,21,10
+2023-12,digital skills,Delhi,293,40735,20,8,19
+2023-12,digital skills,Lucknow,93,75870,12,28,4
+2023-12,digital skills,Jaipur,279,115426,6,8,9
+2023-12,digital skills,Patna,131,32671,24,12,9
+2024-01,literacy,Delhi,112,92070,8,26,8
+2024-01,literacy,Lucknow,199,63586,16,13,5
+2024-01,literacy,Jaipur,279,51465,14,11,20
+2024-01,literacy,Patna,86,70888,23,29,14
+2024-01,vocational,Delhi,181,55995,7,26,9
+2024-01,vocational,Lucknow,106,69529,24,11,20
+2024-01,vocational,Jaipur,280,35383,16,25,15
+2024-01,vocational,Patna,249,78571,7,24,12
+2024-01,digital skills,Delhi,83,85057,20,11,15
+2024-01,digital skills,Lucknow,172,113307,19,30,6
+2024-01,digital skills,Jaipur,191,53086,21,28,10
+2024-01,digital skills,Patna,237,100539,20,22,15
+2024-02,literacy,Delhi,291,107656,13,18,9
+2024-02,literacy,Lucknow,292,41359,13,22,9
+2024-02,literacy,Jaipur,272,90910,23,27,14
+2024-02,literacy,Patna,166,33761,20,18,7
+2024-02,vocational,Delhi,204,57802,16,16,12
+2024-02,vocational,Lucknow,151,108139,13,25,2
+2024-02,vocational,Jaipur,212,55042,7,15,15
+2024-02,vocational,Patna,205,102768,12,30,17
+2024-02,digital skills,Delhi,245,94332,19,8,4
+2024-02,digital skills,Lucknow,155,59045,17,30,9
+2024-02,digital skills,Jaipur,158,117026,23,19,17
+2024-02,digital skills,Patna,221,99588,16,21,19
+2024-03,literacy,Delhi,164,76112,19,16,11
+2024-03,literacy,Lucknow,144,60217,8,14,12
+2024-03,literacy,Jaipur,110,100236,10,14,8
+2024-03,literacy,Patna,269,93464,13,26,18
+2024-03,vocational,Delhi,232,67093,8,14,11
+2024-03,vocational,Lucknow,138,77301,10,17,2
+2024-03,vocational,Jaipur,261,100010,9,16,3
+2024-03,vocational,Patna,93,102529,14,30,6
+2024-03,digital skills,Delhi,243,94340,8,8,20
+2024-03,digital skills,Lucknow,152,91524,20,22,12
+2024-03,digital skills,Jaipur,127,36734,13,23,5
+2024-03,digital skills,Patna,290,38564,17,23,4
+2024-04,literacy,Delhi,227,112502,6,12,6
+2024-04,literacy,Lucknow,287,103772,14,10,9
+2024-04,literacy,Jaipur,110,103147,18,27,9
+2024-04,literacy,Patna,278,98494,17,22,16
+2024-04,vocational,Delhi,156,107139,18,17,20
+2024-04,vocational,Lucknow,238,37894,24,11,8
+2024-04,vocational,Jaipur,240,57659,13,29,4
+2024-04,vocational,Patna,120,61439,10,25,4
+2024-04,digital skills,Delhi,120,30350,18,22,17
+2024-04,digital skills,Lucknow,154,34278,12,17,11
+2024-04,digital skills,Jaipur,259,89510,7,29,9
+2024-04,digital skills,Patna,147,111927,23,29,8
+2024-05,literacy,Delhi,188,45043,22,15,6
+2024-05,literacy,Lucknow,148,48643,7,9,7
+2024-05,literacy,Jaipur,282,70319,24,26,11
+2024-05,literacy,Patna,192,46299,19,30,11
+2024-05,vocational,Delhi,259,82757,13,24,19
+2024-05,vocational,Lucknow,206,87377,7,27,3
+2024-05,vocational,Jaipur,190,72247,24,16,2
+2024-05,vocational,Patna,103,60005,23,26,2
+2024-05,digital skills,Delhi,275,118117,13,26,3
+2024-05,digital skills,Lucknow,275,52962,20,24,16
+2024-05,digital skills,Jaipur,151,53788,23,21,17
+2024-05,digital skills,Patna,103,91605,16,21,12
+2024-06,literacy,Delhi,162,117835,8,13,12
+2024-06,literacy,Lucknow,185,94942,14,29,14
+2024-06,literacy,Jaipur,288,102102,6,22,4
+2024-06,literacy,Patna,160,63082,15,11,14
+2024-06,vocational,Delhi,211,30150,22,22,15
+2024-06,vocational,Lucknow,93,54586,21,19,17
+2024-06,vocational,Jaipur,240,87939,6,14,10
+2024-06,vocational,Patna,220,47172,14,22,17
+2024-06,digital skills,Delhi,111,33783,25,27,9
+2024-06,digital skills,Lucknow,261,50758,14,25,2
+2024-06,digital skills,Jaipur,221,83476,7,15,5
+2024-06,digital skills,Patna,198,45396,25,12,17
+2024-07,literacy,Delhi,263,68254,21,30,10
+2024-07,literacy,Lucknow,186,93242,20,15,16
+2024-07,literacy,Jaipur,221,48958,17,14,18
+2024-07,literacy,Patna,271,47892,7,16,15
+2024-07,vocational,Delhi,167,96550,13,8,11
+2024-07,vocational,Lucknow,265,69132,23,26,17
+2024-07,vocational,Jaipur,118,88529,22,23,13
+2024-07,vocational,Patna,165,102340,22,20,16
+2024-07,digital skills,Delhi,162,54727,12,26,14
+2024-07,digital skills,Lucknow,139,83841,6,18,17
+2024-07,digital skills,Jaipur,260,79968,17,29,6
+2024-07,digital skills,Patna,206,34852,9,24,20
+2024-08,literacy,Delhi,164,43154,19,11,18
+2024-08,literacy,Lucknow,196,32011,9,21,6
+2024-08,literacy,Jaipur,99,91537,13,18,14
+2024-08,literacy,Patna,246,40527,15,29,19
+2024-08,vocational,Delhi,177,71505,25,30,17
+2024-08,vocational,Lucknow,218,34705,24,10,9
+2024-08,vocational,Jaipur,241,119705,14,15,4
+2024-08,vocational,Patna,191,42903,25,30,5
+2024-08,digital skills,Delhi,193,51805,14,8,3
+2024-08,digital skills,Lucknow,163,37355,14,19,13
+2024-08,digital skills,Jaipur,190,49080,12,24,15
+2024-08,digital skills,Patna,224,119364,10,13,7
+2024-09,literacy,Delhi,100,109887,17,27,9
+2024-09,literacy,Lucknow,207,106435,9,15,16
+2024-09,literacy,Jaipur,243,63289,19,16,2
+2024-09,literacy,Patna,285,90981,14,29,19
+2024-09,vocational,Delhi,120,39681,19,19,20
+2024-09,vocational,Lucknow,156,113746,18,30,10
+2024-09,vocational,Jaipur,196,69599,11,20,17
+2024-09,vocational,Patna,107,61091,17,26,13
+2024-09,digital skills,Delhi,227,68780,14,8,14
+2024-09,digital skills,Lucknow,150,31061,23,29,3
+2024-09,digital skills,Jaipur,235,95107,14,15,13
+2024-09,digital skills,Patna,136,113442,11,27,10
+2024-10,literacy,Delhi,253,116400,9,28,5
+2024-10,literacy,Lucknow,240,114717,6,17,16
+2024-10,literacy,Jaipur,88,105965,16,12,4
+2024-10,literacy,Patna,155,72823,18,13,8
+2024-10,vocational,Delhi,113,100701,16,24,18
+2024-10,vocational,Lucknow,149,51567,13,23,11
+2024-10,vocational,Jaipur,271,74396,8,22,4
+2024-10,vocational,Patna,116,59571,17,25,13
+2024-10,digital skills,Delhi,103,81717,5,16,19
+2024-10,digital skills,Lucknow,111,89609,16,29,10
+2024-10,digital skills,Jaipur,229,79941,25,19,5
+2024-10,digital skills,Patna,252,60647,20,8,19
+2024-11,literacy,Delhi,163,109964,12,28,4
+2024-11,literacy,Lucknow,242,90852,14,28,15
+2024-11,literacy,Jaipur,109,48320,6,9,11
+2024-11,literacy,Patna,206,45220,8,15,19
+2024-11,vocational,Delhi,114,80940,19,19,19
+2024-11,vocational,Lucknow,187,106983,9,21,5
+2024-11,vocational,Jaipur,293,94139,24,21,10
+2024-11,vocational,Patna,88,78566,11,22,16
+2024-11,digital skills,Delhi,140,77537,8,29,13
+2024-11,digital skills,Lucknow,219,114518,16,9,14
+2024-11,digital skills,Jaipur,150,54878,8,22,4
+2024-11,digital skills,Patna,249,57801,25,28,2
+2024-12,literacy,Delhi,92,73713,12,12,20
+2024-12,literacy,Lucknow,132,38992,22,14,20
+2024-12,literacy,Jaipur,135,60539,15,12,2
+2024-12,literacy,Patna,150,48964,9,25,10
+2024-12,vocational,Delhi,284,52871,8,29,2
+2024-12,vocational,Lucknow,113,31947,16,15,20
+2024-12,vocational,Jaipur,162,32068,10,16,3
+2024-12,vocational,Patna,112,85176,21,11,4
+2024-12,digital skills,Delhi,201,88756,16,24,20
+2024-12,digital skills,Lucknow,107,89245,21,15,3
+2024-12,digital skills,Jaipur,266,116363,21,17,16
+2024-12,digital skills,Patna,244,34082,6,23,14
+2025-01,literacy,Delhi,189,119928,8,23,16
+2025-01,literacy,Lucknow,98,40589,15,27,6
+2025-01,literacy,Jaipur,96,46540,13,27,20
+2025-01,literacy,Patna,220,72622,17,27,18
+2025-01,vocational,Delhi,155,89469,21,27,15
+2025-01,vocational,Lucknow,105,44996,25,28,19
+2025-01,vocational,Jaipur,264,58183,18,22,9
+2025-01,vocational,Patna,185,74424,19,20,15
+2025-01,digital skills,Delhi,266,42463,15,21,12
+2025-01,digital skills,Lucknow,250,63408,16,12,17
+2025-01,digital skills,Jaipur,97,41957,7,10,15
+2025-01,digital skills,Patna,104,78843,9,25,3
+2025-02,literacy,Delhi,230,103608,22,18,5
+2025-02,literacy,Lucknow,185,76346,18,9,11
+2025-02,literacy,Jaipur,233,70953,16,11,20
+2025-02,literacy,Patna,209,57884,9,29,17
+2025-02,vocational,Delhi,137,44184,16,25,13
+2025-02,vocational,Lucknow,109,66512,23,15,15
+2025-02,vocational,Jaipur,296,103526,24,27,19
+2025-02,vocational,Patna,86,109822,13,8,7
+2025-02,digital skills,Delhi,149,70499,15,19,2
+2025-02,digital skills,Lucknow,126,48776,23,29,14
+2025-02,digital skills,Jaipur,97,48595,25,8,4
+2025-02,digital skills,Patna,271,99531,11,20,15
+2025-03,literacy,Delhi,196,74681,10,19,11
+2025-03,literacy,Lucknow,264,72517,23,27,4
+2025-03,literacy,Jaipur,93,50392,10,27,3
+2025-03,literacy,Patna,252,40693,13,22,15
+2025-03,vocational,Delhi,204,109570,19,21,10
+2025-03,vocational,Lucknow,135,97154,8,19,15
+2025-03,vocational,Jaipur,108,67125,23,23,18
+2025-03,vocational,Patna,250,70425,6,15,14
+2025-03,digital skills,Delhi,233,37180,5,14,11
+2025-03,digital skills,Lucknow,134,47987,13,17,12
+2025-03,digital skills,Jaipur,110,31013,20,21,7
+2025-03,digital skills,Patna,113,79834,22,30,9
+2025-04,literacy,Delhi,208,103233,16,10,14
+2025-04,literacy,Lucknow,300,35544,18,8,16
+2025-04,literacy,Jaipur,99,71033,23,21,20
+2025-04,literacy,Patna,183,113904,18,17,5
+2025-04,vocational,Delhi,183,32733,15,13,16
+2025-04,vocational,Lucknow,292,77428,7,21,5
+2025-04,vocational,Jaipur,142,87104,23,20,18
+2025-04,vocational,Patna,100,81873,14,18,9
+2025-04,digital skills,Delhi,165,52037,7,24,5
+2025-04,digital skills,Lucknow,215,96840,11,19,13
+2025-04,digital skills,Jaipur,266,114599,9,15,5
+2025-04,digital skills,Patna,117,63550,11,13,6
+2025-05,literacy,Delhi,274,115918,7,13,17
+2025-05,literacy,Lucknow,198,103889,23,22,20
+2025-05,literacy,Jaipur,244,113269,24,18,12
+2025-05,literacy,Patna,118,87640,7,23,16
+2025-05,vocational,Delhi,241,69691,13,26,3
+2025-05,vocational,Lucknow,170,96497,7,17,16
+2025-05,vocational,Jaipur,195,34929,6,19,11
+2025-05,vocational,Patna,99,114497,7,27,18
+2025-05,digital skills,Delhi,178,90648,23,25,3
+2025-05,digital skills,Lucknow,195,104928,25,14,12
+2025-05,digital skills,Jaipur,234,92341,21,12,3
+2025-05,digital skills,Patna,195,43566,15,30,4
+2025-06,literacy,Delhi,209,114689,10,9,9
+2025-06,literacy,Lucknow,261,87377,19,24,18
+2025-06,literacy,Jaipur,236,50807,16,19,11
+2025-06,literacy,Patna,179,83578,15,29,3
+2025-06,vocational,Delhi,282,112691,25,18,4
+2025-06,vocational,Lucknow,164,42387,22,29,14
+2025-06,vocational,Jaipur,152,63029,24,12,12
+2025-06,vocational,Patna,100,106380,9,19,11
+2025-06,digital skills,Delhi,247,116787,17,12,4
+2025-06,digital skills,Lucknow,159,103259,17,28,12
+2025-06,digital skills,Jaipur,288,46750,21,10,15
+2025-06,digital skills,Patna,210,77425,5,19,11
+2025-07,literacy,Delhi,126,58074,15,23,8
+2025-07,literacy,Lucknow,137,48030,9,10,11
+2025-07,literacy,Jaipur,296,43256,21,25,18
+2025-07,literacy,Patna,89,116760,15,27,6
+2025-07,vocational,Delhi,232,79377,9,13,7
+2025-07,vocational,Lucknow,292,111885,10,22,3
+2025-07,vocational,Jaipur,185,77749,12,22,11
+2025-07,vocational,Patna,272,88841,12,25,9
+2025-07,digital skills,Delhi,159,91474,11,19,20
+2025-07,digital skills,Lucknow,192,90513,14,20,18
+2025-07,digital skills,Jaipur,215,84874,10,14,6
+2025-07,digital skills,Patna,144,36839,25,23,13
+2025-08,literacy,Delhi,221,43446,21,11,11
+2025-08,literacy,Lucknow,101,51012,13,22,18
+2025-08,literacy,Jaipur,117,87340,7,15,16
+2025-08,literacy,Patna,169,33495,18,9,14
+2025-08,vocational,Delhi,208,79015,12,20,4
+2025-08,vocational,Lucknow,175,59430,5,18,5
+2025-08,vocational,Jaipur,294,115191,15,12,6
+2025-08,vocational,Patna,89,67601,20,30,6
+2025-08,digital skills,Delhi,274,91487,19,27,2
+2025-08,digital skills,Lucknow,100,32490,13,14,6
+2025-08,digital skills,Jaipur,220,109807,21,21,5
+2025-08,digital skills,Patna,278,67762,12,17,5
+2025-09,literacy,Delhi,92,61252,18,28,16
+2025-09,literacy,Lucknow,96,44530,20,27,19
+2025-09,literacy,Jaipur,84,112831,21,26,9
+2025-09,literacy,Patna,263,48818,14,21,2
+2025-09,vocational,Delhi,237,76244,12,26,15
+2025-09,vocational,Lucknow,127,117080,7,24,13
+2025-09,vocational,Jaipur,97,98951,22,24,18
+2025-09,vocational,Patna,221,32665,17,23,3
+2025-09,digital skills,Delhi,242,80709,16,16,2
+2025-09,digital skills,Lucknow,171,38855,16,15,5
+2025-09,digital skills,Jaipur,277,106271,15,12,3
+2025-09,digital skills,Patna,170,101567,15,28,7
+2025-10,literacy,Delhi,292,119742,19,30,17
+2025-10,literacy,Lucknow,241,53891,9,10,16
+2025-10,literacy,Jaipur,89,68462,11,9,8
+2025-10,literacy,Patna,90,71365,14,24,14
+2025-10,vocational,Delhi,288,101176,20,16,3
+2025-10,vocational,Lucknow,272,114790,11,17,13
+2025-10,vocational,Jaipur,300,36265,25,18,10
+2025-10,vocational,Patna,111,78237,18,20,16
+2025-10,digital skills,Delhi,178,74438,10,23,17
+2025-10,digital skills,Lucknow,174,98062,13,10,15
+2025-10,digital skills,Jaipur,100,86440,24,13,19
+2025-10,digital skills,Patna,155,72101,8,10,12
+2025-11,literacy,Delhi,249,68750,14,22,15
+2025-11,literacy,Lucknow,122,88183,16,22,3
+2025-11,literacy,Jaipur,266,76210,24,21,10
+2025-11,literacy,Patna,243,37518,7,29,14
+2025-11,vocational,Delhi,173,97251,10,8,6
+2025-11,vocational,Lucknow,297,109635,19,9,6
+2025-11,vocational,Jaipur,97,60932,25,19,13
+2025-11,vocational,Patna,178,104349,6,27,6
+2025-11,digital skills,Delhi,253,88972,16,19,16
+2025-11,digital skills,Lucknow,275,40077,23,12,18
+2025-11,digital skills,Jaipur,173,82171,15,28,10
+2025-11,digital skills,Patna,143,44869,5,13,17
+2025-12,literacy,Delhi,212,80723,22,11,10
+2025-12,literacy,Lucknow,278,64116,19,14,11
+2025-12,literacy,Jaipur,257,94382,11,11,6
+2025-12,literacy,Patna,298,39706,19,13,16
+2025-12,vocational,Delhi,102,119381,15,29,13
+2025-12,vocational,Lucknow,261,38511,22,25,11
+2025-12,vocational,Jaipur,156,50644,25,13,13
+2025-12,vocational,Patna,210,59391,8,14,6
+2025-12,digital skills,Delhi,140,94752,5,19,19
+2025-12,digital skills,Lucknow,226,78353,19,25,6
+2025-12,digital skills,Jaipur,236,41300,7,17,14
+2025-12,digital skills,Patna,263,92739,21,21,15
