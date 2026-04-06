@@ -63,6 +63,38 @@
             #downloadPDF:hover {
                 background-color: #3498db;
             }
+
+            .kpi-container {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-bottom: 30px;
+                flex-wrap: wrap;
+            }
+
+            .kpi-card {
+                background: white;
+                border-radius: 8px;
+                padding: 20px 30px;
+                text-align: center;
+                min-width: 150px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                border-top: 4px solid #3498db;
+            }
+
+            .kpi-value {
+                font-size: 28px;
+                font-weight: bold;
+                color: #2c3e50;
+            }
+
+            .kpi-label {
+                font-size: 12px;
+                color: #7f8c8d;
+                margin-top: 5px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
             }
 
         </style>
@@ -108,6 +140,26 @@
                 <option value="2025">2025</option>
             </select>
         </div>
+
+        <div class="kpi-container">
+            <div class="kpi-card">
+                <div class="kpi-value" id="kpibeneficiaries">-</div>
+                <div class="kpi-label">Total Beneficiaries</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value" id="kpifunds">-</div>
+                <div class="kpi-label">Total Funds Spent</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value" id="kpidropout">-</div>
+                <div class="kpi-label">Avg Dropout Rate</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value" id="kpisessions">-</div>
+                <div class="kpi-label">Total Sessions</div>
+            </div>
+        </div>
+
         <div id="loadingIndicator" style="text-align:center; display:none;  color: #7f8c8d; font-size: 14px; margin-bottom: 15px;">
         ⏳ Loading data...
         </div>
