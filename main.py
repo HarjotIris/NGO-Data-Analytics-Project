@@ -3,6 +3,8 @@ import pandas as pd
 from fastapi import FastAPI
 
 app = FastAPI() # creating the application
+
+
 # allow requests from port 3000
 from fastapi.middleware.cors import CORSMiddleware
 

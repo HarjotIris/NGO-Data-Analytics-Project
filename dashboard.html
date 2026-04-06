@@ -7,7 +7,8 @@
                 background-color: #f4f4f4;
                 margin: 0;
                 padding: 20px;
-                color: #333
+                color: #333;
+                box-sizing: border-box;
             }
 
             h1{
@@ -21,43 +22,422 @@
                 border-radius: 8px;
                 padding: 20px;
                 margin-bottom: 30px;
-                width: 60%;
+                width: 90%;
                 margin-left: auto;
                 margin-right: auto;
+                max-width: 800px;
             }
+
+            .subtitle{
+                text-align: center;
+                color: #7f8c8d;
+                font-size: 14px;
+                margin-top: -20px;
+                margin-bottom: 30px;
+            }
+
+            .filter-bar{
+                text-align: center;
+                margin-bottom: 25px;
+                font-size: 15px;
+            }
+
+            .filter-bar select{
+                padding: 8px 12px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                font-size: 15px;
+                margin-left: 10px;
+                cursor: pointer;
+            
+            #downloadPDF {
+                background-color: #2c3e50;
+                color: white;
+                border: none;
+                padding: 10px 25px;
+                border-radius: 5px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            #downloadPDF:hover {
+                background-color: #3498db;
+            }
+            }
+
         </style>
         <meta charset="UTF-8">
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <title>NGO Dashboard</title>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     </head>
     <body>
         <h1>NGO Analytics Dashboard</h1>
+        <p class="subtitle">Jan 2023 - Dec 2025 &nbsp;|&nbsp; 432 records &nbsp;|&nbsp; 4 Cities &nbsp;|&nbsp; 3 Programs</p>
+        <!--&nbsp; is just a space character in HTML — it keeps the | separators from wrapping onto new lines.-->
+
+        <div class = "filter-bar">
+            <label for="cityFilter">Filter by City:</label>
+            <select id="cityFilter">
+                <option value="">All Cities</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Patna">Patna</option>
+            </select>
+
+            &nbsp; &nbsp;
+
+            <label for="programFilter">Filter by Program:</label>
+            <select id="programFilter">
+                <option value="">All Programs</option>
+                <option value="literacy">Literacy</option>
+                <option value="vocational">Vocational</option>
+                <option value="digital skills">Digital Skills</option>
+            </select>
+
+            &nbsp; &nbsp;
+
+            <label for="yearFilter">Filter by Year:</label>
+            <select id="yearFilter">
+                <option value="">All Years</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>
+        </div>
+        <div id="loadingIndicator" style="text-align:center; display:none;  color: #7f8c8d; font-size: 14px; margin-bottom: 15px;">
+        ⏳ Loading data...
+        </div>
+
+        <div style="text-align:center; margin-bottom: 20px;">
+            <button id="downloadPDF" onclick="generatePDF()">
+                ⬇️ Download PDF Report
+            </button>
+        </div>
+
         <div class = "chart-container">
             <canvas id = "cityChart"></canvas>
         </div>
+        <div class = "chart-container">
+            <canvas id = "dropoutChart"></canvas>
+        </div>
+        <div class = "chart-container">
+            <canvas id = "costChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="trendChart"></canvas>
+        </div>
         <script>
-            async function loadCityChart(){
-                const response = await fetch("http://localhost:8000/cities");
+            let cityChartInstance = null;
+            let dropoutChartInstance = null;
+            let costChartInstance = null;
+            let trendChartInstance = null;
+
+            function showEmptyState(canvasId, message = "No data available for this selection") {
+                const canvas = document.getElementById(canvasId);
+                const ctx = canvas.getContext("2d");
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.font = "16px Arial";
+                ctx.fillStyle = "#7f8c8d";
+                ctx.textAlign = "center";
+                ctx.fillText(message, canvas.width / 2, canvas.height / 2);
+            }
+             
+            //Function accepts an optional city filter, defaults to empty
+            async function loadCityChart(city = "", program = "", year=""){
+                const response = await fetch("http://localhost:8000/full_table");
                 const data = await response.json();
 
-                const labels = data.map(d => d.city);
-                const values = data.map(d => d.total_beneficiaries);
+                // Filter by city if selected
+                let filtered = data;
+                if (city) filtered = filtered.filter(d => d.city === city);
+                if (program) filtered = filtered.filter(d => d.program === program);
+                if (year) filtered = filtered.filter(d => d.month.substring(0, 4) ===year);
+
+                if (filtered.length === 0) {
+                    if (cityChartInstance) cityChartInstance.destroy();
+                    showEmptyState("cityChart");
+                    return;
+                }
+
+                // Group by city and program
+                const grouped = {};
+                // Start with an empty object {}
+                filtered.forEach(row => {
+                    //For each row, if the city doesn't exist yet in grouped, create it
+                    if (!grouped[row.city]) grouped[row.city] = {};
+                    // If the program doesn't exist under that city yet, set it to 0
+                    if (!grouped[row.city][row.program]) grouped[row.city][row.program] = 0;
+                    //Add that row's beneficiaries to the running total
+                    grouped[row.city][row.program] += row.beneficiaries;
+                });
+
+                const cities = [...new Set(filtered.map(d => d.city))];
+                const programs = [...new Set(filtered.map(d => d.program))];
+                const colors = ["#3498db", "#e74c3c", "#2ecc71"];
+
+                const datasets = programs.map((program, i) => ({
+                    label: program,
+                    data: cities.map(city => grouped[city]?.[program] || 0),
+                    backgroundColor: colors[i]
+                }));
+
+                if (cityChartInstance) cityChartInstance.destroy();
 
                 const ctx = document.getElementById("cityChart").getContext("2d");
-                new Chart(ctx, {
+                cityChartInstance = new Chart(ctx, {
+                    type: "bar",
+                    data: { labels: cities, datasets: datasets },
+                    options: {
+                        plugins: {
+                            title:{
+                                display: true,
+                                text: "Beneficiaries by City and Program",
+                                font: { size: 16 }
+                            }
+                        }
+                    }
+                });
+            }
+            
+
+            async function loadDropoutChart(city="", program = "", year=""){
+                const response = await fetch("http://localhost:8000/full_table");
+                const data = await response.json();
+
+                let filtered = data;
+                if (city) filtered = filtered.filter(d => d.city === city);
+                if (program) filtered = filtered.filter(d => d.program === program);
+                if (year) filtered = filtered.filter(d => d.month.substring(0, 4) ===year);
+
+                if (filtered.length === 0) {
+                    if (dropoutChartInstance) dropoutChartInstance.destroy();
+                    showEmptyState("dropoutChart");
+                    return;
+                }
+
+                // Group by program and calculate average dropout rate
+                const programs = ["literacy", "vocational", "digital skills"];
+                const labels = [...new Set(filtered.map(d => d.program))]
+                const values = labels.map(prog => {
+                    const rows = filtered.filter(d => d.program === prog);
+                    return rows.reduce((sum, d) => sum + d.dropout_rate, 0) / rows.length;
+                });
+
+                if (dropoutChartInstance) dropoutChartInstance.destroy();
+                const ctx = document.getElementById("dropoutChart").getContext("2d");
+                dropoutChartInstance = new Chart(ctx, {
+                    type:"bar",
+                    data:{
+                        labels: labels,
+                        datasets:[{
+                            label:"Avg Dropout Rate per Program",
+                            data: values,
+                            backgroundColor: '#e74c3c'
+                        },
+                    ]
+                    },
+                    options: {
+                        plugins: {
+                            title:{
+                                display: true,
+                                text: "Average Dropout Rate by Program",
+                                font: { size: 16 }
+                            }
+                        }
+                    }
+                });
+            }
+            
+
+            async function loadCostChart(city="", program="", year=""){
+                const response = await fetch("http://localhost:8000/full_table");
+                const data = await response.json();
+
+                let filtered = data;
+                if (city) filtered = filtered.filter(d => d.city === city);
+                if (program) filtered = filtered.filter(d => d.program === program);
+                if (year) filtered = filtered.filter(d => d.month.substring(0, 4) ===year);
+
+                if (filtered.length === 0) {
+                    if (costChartInstance) costChartInstance.destroy();
+                    showEmptyState("costChart");
+                    return;
+                }
+
+                // Group by city
+                const programs = ["literacy", "vocational", "digital skills"];
+                const labels = [...new Set(filtered.map(d => d.city))]
+                const values = labels.map(c => {
+                    const rows = filtered.filter(d => d.city === c);
+                    total_funds = rows.reduce((sum, d) => sum + d.funds_spent, 0)
+                    total_beneficiaries = rows.reduce((sum, d) => sum + d.beneficiaries, 0)
+                    return total_funds/total_beneficiaries;
+                });
+
+                if (costChartInstance) costChartInstance.destroy();
+
+                const ctx = document.getElementById("costChart").getContext("2d");
+                costChartInstance = new Chart(ctx, {
                     type: "bar",
                     data: {
                         labels: labels,
                         datasets: [{
-                            label: "Total Beneficiaries by City",
+                            label: "Cost per Beneficiary by Program",
                             data: values,
-                            backgroundColor: "#3498db"
+                            backgroundColor: "#2ecc71"
                         }]
+                    },
+                    options: {
+                        plugins: {
+                            title:{
+                                display: true,
+                                text: "Cost per Beneficiary by Program",
+                                font: { size: 16 }
+                            }
+                        }
                     }
                 });
             }
-            loadCityChart();
+
+            async function loadTrendChart(city = "", program = "", year="") {
+                const response = await fetch("http://localhost:8000/full_table");
+                const data = await response.json();
+
+                // Apply filters
+                let filtered = data;
+                if (city) filtered = filtered.filter(d => d.city === city);
+                if (program) filtered = filtered.filter(d => d.program === program);
+                if (year) filtered = filtered.filter(d => d.month.substring(0, 4) ===year);
+
+                if (filtered.length === 0) {
+                    if (trendChartInstance) trendChartInstance.destroy();
+                    showEmptyState("trendChart");
+                    return;
+                }
+
+                // Group by month and program
+                const grouped = {};
+                filtered.forEach(row => {
+                    const month = row.month.substring(0, 7); // "2023-01-01" -> "2023-01"
+                    if (!grouped[month]) grouped[month] = {};
+                    if (!grouped[month][row.program]) grouped[month][row.program] = 0;
+                    grouped[month][row.program] += row.beneficiaries;
+                });
+
+                const months = [...new Set(filtered.map(d => d.month.substring(0, 7)))].sort();
+                const programs = ["literacy", "vocational", "digital skills"];
+                const colors = ["#3498db", "#e74c3c", "#2ecc71"];
+
+                const datasets = programs.map((prog, i) => ({
+                    label: prog,
+                    data: months.map(m => grouped[m]?.[prog] || 0),
+                    borderColor: colors[i],
+                    backgroundColor: "transparent",
+                    tension: 0.3
+                }));
+
+                if (trendChartInstance) trendChartInstance.destroy();
+
+                const ctx = document.getElementById("trendChart").getContext("2d");
+                trendChartInstance = new Chart(ctx, {
+                    type: "line",
+                    data: { labels: months, datasets: datasets },
+                    options: {
+                        scales: {
+                            x: {
+                                ticks: {
+                                    maxTicksLimit: 12
+                                }
+                            }
+                        },
+                        plugins: {
+                            title:{
+                                display: true,
+                                text: "Benefeciaries over time by Program",
+                                font: { size: 16 }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            function updateDashboard(){
+                const city = document.getElementById("cityFilter").value;
+                const program = document.getElementById("programFilter").value;
+                const year = document.getElementById("yearFilter").value;
+                document.getElementById("loadingIndicator").style.display = "block";
+                Promise.all([
+                loadCityChart(city, program, year),
+                loadDropoutChart(city, program, year),
+                loadCostChart(city, program, year),
+                loadTrendChart(city, program, year)
+            ]).then(()=>{
+                document.getElementById("loadingIndicator").style.display = "none";
+            });
+            }
+            //.addEventListener("change", updateDashboard): This tells the browser to "watch" that element. Every time the user selects a different city (the "change" event), the browser will automatically run the function named updateDashboard.
+            document.getElementById("cityFilter").addEventListener("change", updateDashboard);
+            document.getElementById("programFilter").addEventListener("change", updateDashboard);
+            document.getElementById("yearFilter").addEventListener("change", updateDashboard);
+
+            //updateDashboard();: This line calls the function manually as soon as the page loads. This ensures the dashboard isn't blank at the start and displays data for the default city immediately.
+            updateDashboard();
+
+
+            async function generatePDF() {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF("p", "mm", "a4");
+                
+                const city = document.getElementById("cityFilter").value || "All Cities";
+                const program = document.getElementById("programFilter").value || "All Programs";
+                const year = document.getElementById("yearFilter").value || "All Years";
+                
+                // Header
+                doc.setFontSize(20);
+                doc.setTextColor(44, 62, 80);
+                doc.text("NGO Analytics Report", 105, 20, { align: "center" });
+                
+                doc.setFontSize(11);
+                doc.setTextColor(127, 140, 141);
+                doc.text(`City: ${city}  |  Program: ${program}  |  Year: ${year}`, 105, 30, { align: "center" });
+                doc.text(`Generated: ${new Date().toLocaleDateString()}`, 105, 37, { align: "center" });
+                
+                // Add charts
+                const chartIds = ["cityChart", "dropoutChart", "costChart", "trendChart"];
+                const chartTitles = [
+                    "Beneficiaries by City and Program",
+                    "Average Dropout Rate by Program", 
+                    "Cost per Beneficiary by City",
+                    "Beneficiary Trends Over Time"
+                ];
+                
+                let yPosition = 45;
+                
+                for (let i = 0; i < chartIds.length; i++) {
+                    const canvas = document.getElementById(chartIds[i]);
+                    const imgData = await html2canvas(canvas).then(c => c.toDataURL("image/png"));
+                    
+                    if (i > 0) {
+                        doc.addPage();
+                        yPosition = 15;
+                    }
+                    
+                    doc.setFontSize(11);
+                    doc.setTextColor(44, 62, 80);
+                    doc.text(chartTitles[i], 15, yPosition);
+                    doc.addImage(imgData, "PNG", 15, yPosition + 5, 180, 100);
+                    yPosition += 75;
+                }
+                
+                doc.save(`NGO_Report_${city}_${program}_${year}.pdf`);
+            }
         </script>
     </body>
 </html>
+
+<!-- http://localhost:3000/dashboard.html 
+ python -m http.server 3000-->
