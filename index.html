@@ -181,6 +181,17 @@
                 overflow: hidden;
             }
 
+            .canvas-wrapper {
+                position: relative;
+                height: 300px;
+            }
+
+            @media (max-width: 768px) {
+                .canvas-wrapper {
+                    height: 220px;
+                }
+            }
+
         </style>
         <meta charset="UTF-8">
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
@@ -262,16 +273,24 @@
         </div>
         <div class="chart-grid">
             <div class = "chart-container">
-                <canvas id = "cityChart"></canvas>
+                <div class="canvas-wrapper">
+                    <canvas id = "cityChart"></canvas>
+                </div>
             </div>
             <div class = "chart-container">
-                <canvas id = "dropoutChart"></canvas>
+                <div class="canvas-wrapper">
+                    <canvas id = "dropoutChart"></canvas>
+                </div>
             </div>
             <div class = "chart-container">
-                <canvas id = "costChart"></canvas>
+                <div class="canvas-wrapper">
+                    <canvas id = "costChart"></canvas>
+                </div>
             </div>
             <div class="chart-container">
-                <canvas id="trendChart"></canvas>
+                <div class="canvas-wrapper">
+                    <canvas id="trendChart"></canvas>
+                </div>
             </div>
         </div>
         <script>
