@@ -134,6 +134,10 @@
                 .filter-bar select {
                     width: 80%;
                 }
+
+                #trendChart {
+                    height: 250px !important;
+                }
             }
             
             .header {
@@ -435,7 +439,7 @@
                         plugins: {
                             title:{
                                 display: true,
-                                text: "Cost per Beneficiary by Program",
+                                text: "Cost per Beneficiary by City",
                                 font: { size: 16 }
                             }
                         }
@@ -490,7 +494,8 @@
                         scales: {
                             x: {
                                 ticks: {
-                                    maxTicksLimit: 12
+                                    maxTicksLimit: 6,
+                                    maxRotation: 45 
                                 }
                             }
                         },
