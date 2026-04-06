@@ -45,12 +45,12 @@ This isn't just a dashboard. It's a complete data pipeline built from scratch:
 
 ## Features
 
-- **4 interactive charts** - beneficiaries by city/program, dropout rates, cost efficiency, trends over time
-- **3 simultaneous filters** - city, program, and year — all charts update instantly
-- **KPI cards** - headline numbers at a glance
-- **PDF report download** - filtered, formatted, ready to send to donors or board
-- **Live REST API** - with auto-generated documentation at `/docs`
-- **Deployed** - no setup required, works in any browser
+- **4 interactive charts** -> beneficiaries by city/program, dropout rates, cost efficiency, trends over time
+- **3 simultaneous filters** -> city, program, and year -> all charts update instantly
+- **KPI cards** -> headline numbers at a glance
+- **PDF report download** -> filtered, formatted, ready to send to donors or board
+- **Live REST API** -> with auto-generated documentation at `/docs`
+- **Deployed** -> no setup required, works in any browser
 
 ---
 
@@ -59,7 +59,7 @@ This isn't just a dashboard. It's a complete data pipeline built from scratch:
 - Vocational training has the highest dropout rate (7.2%) and highest cost per beneficiary (₹407)
 - Digital skills programs are the most cost-efficient (₹391 per beneficiary)
 - Patna has the highest cost per beneficiary across all cities
-- Beneficiary volume and dropout rate are negatively correlated — larger cohorts retain better
+- Beneficiary volume and dropout rate are negatively correlated -> larger cohorts retain better
 
 ---
 
