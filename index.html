@@ -191,14 +191,7 @@
                     height: 220px;
                 }
             }
-            .chart-container {
-                transition: opacity 0.3s ease;
-            }
-
-            .chart-container.loading {
-                opacity: 0;
-            }
-
+            
         </style>
         <meta charset="UTF-8">
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
@@ -280,24 +273,16 @@
         </div>
         <div class="chart-grid">
             <div class = "chart-container">
-                <div class="canvas-wrapper">
                     <canvas id = "cityChart"></canvas>
-                </div>
             </div>
             <div class = "chart-container">
-                <div class="canvas-wrapper">
                     <canvas id = "dropoutChart"></canvas>
-                </div>
             </div>
             <div class = "chart-container">
-                <div class="canvas-wrapper">
                     <canvas id = "costChart"></canvas>
-                </div>
             </div>
             <div class="chart-container">
-                <div class="canvas-wrapper">
                     <canvas id="trendChart"></canvas>
-                </div>
             </div>
         </div>
         <script>
