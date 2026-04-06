@@ -51,7 +51,7 @@ This isn't just a dashboard. It's a complete data pipeline built from scratch:
 - **PDF report download** -> filtered, formatted, ready to send to donors or board
 - **Live REST API** -> with auto-generated documentation at `/docs`
 - **Deployed** -> no setup required, works in any browser
-- **Desktop optimised** — best experienced on laptop or desktop browsers
+- **Desktop optimised** -> best experienced on laptop or desktop browsers
 ---
 
 ## Key Insights (from synthetic data)
