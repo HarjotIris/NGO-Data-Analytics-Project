@@ -191,6 +191,13 @@
                     height: 220px;
                 }
             }
+            .chart-container {
+                transition: opacity 0.3s ease;
+            }
+
+            .chart-container.loading {
+                opacity: 0;
+            }
 
         </style>
         <meta charset="UTF-8">
@@ -571,6 +578,8 @@
                 const program = document.getElementById("programFilter").value;
                 const year = document.getElementById("yearFilter").value;
                 document.getElementById("loadingIndicator").style.display = "block";
+                // Fade out
+                document.querySelectorAll(".chart-container").forEach(el => el.classList.add("loading"));
                 Promise.all([
                 loadCityChart(city, program, year),
                 loadDropoutChart(city, program, year),
@@ -578,6 +587,8 @@
                 loadTrendChart(city, program, year),
                 updateKPIs(city, program, year)
             ]).then(()=>{
+            // Fade back in
+                document.querySelectorAll(".chart-container").forEach(el => el.classList.remove("loading"));
                 document.getElementById("loadingIndicator").style.display = "none";
             });
             }
